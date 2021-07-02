@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import NavBar from "../../shared/components/Navigation/NavBar";
 
 import './Home.css';
 import keviilogo from "../../shared/components/Images/keviilogo.png";
@@ -8,6 +9,7 @@ const Home = (props) => {
   const auth = useContext(LoginContext);
   return (
     <React.Fragment>
+      <NavBar/>
       <img className="logo" src={keviilogo} alt="Logo of KEVII Hall"/>
       <h2 className="title">This is home, truly</h2>
       {auth.isLoggedIn && <h3>you are now logged in</h3>}

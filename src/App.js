@@ -78,7 +78,6 @@ const App = () => {
       value={{isLoggedIn: isLoggedIn, login: login, logout: logout }}
     >
       <Router>
-        <MainNavigation />
         <main>
           {routes}
         </main>
