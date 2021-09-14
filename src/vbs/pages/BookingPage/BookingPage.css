@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+.BookingPageMainDiv {
+  flex-direction: column;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2%;
+}
+
+.Statusbar {
+  margin-left: 0;
+}
+
+.BookingPageFormContents {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #ecdbba;
+  padding: 3%;
+  padding-bottom: 0%;
+}
+
+.BookingPageForm {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.BookingPageFormRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 4%;
+}
+
+.BookingPageFormTitles {
+  color: #c84b31;
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 2.25vw;
+  text-align: right;
+  width: 20%;
+  height: 100%;
+  margin: 0 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.BookingPageFormCcaContainer {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.Bookingpageradio-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 1%;
+}
+
+.black {
+  color: black;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.35em;
+  width: 70%;
+}
+
+h3 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+#Email {
+  height: 5vh;
+  width: 70%;
+  max-height: 40px;
+}
+
+#Detail {
+  align-items: flex-start;
+}
+
+.bookingPageActive {
+  height: 15vh;
+  width: 20vw;
+  margin-bottom: 1%;
+}
+
+select[name="HallCCA"] {
+  height: 5vh;
+  width: 25vw;
+  max-height: 40px;
+  border: 0px;
+}
+
+#Details {
+  height: 15vh;
+  width: 60%;
+  max-height: 100px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+button {
+  cursor: pointer;
+}
+
+button a {
+  padding: 0.5% 5%;
+  text-decoration: none;
+  padding: inherit;
+}
+
+button a:visited {
+  color: inherit;
+}
+
+@media only screen and (max-width: 1200px) {
+  .BookingPageForm {
+    width: 95%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .BookingPageFormContents {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-items: center;
+    background-color: #ecdbba;
+    padding-top: 5%;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0%;
+    padding: 5% 0 0 0;
+  }
+
+  .BookingPageForm {
+    display: flex;
+    flex-direction: column;
+    width: 96%;
+    justify-content: center;
+    margin-top: 5%;
+    margin-bottom: 12%;
+  }
+
+  .BookingPageFormTitles {
+    color: #c84b31;
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    margin-left: 3vw;
+    width: fit-content;
+  }
+
+  .BookingPageFormRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin-bottom:6%;
+  }
+
+  .BookingPageFormCcaContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .BookingPageradio-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 2%;
+  }
+
+  label {
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .black {
+    color: black;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 1vh;
+  }
+
+  input[name="Email"] {
+    height: 7vh;
+    width: 25vw;
+    max-height: 40px;
+  }
+
+  select[name="HallCCA"] {
+    height: 5vh;
+    width: 50vw;
+    max-height: 40px;
+    margin-bottom: 2%;
+    border: 0px;
+  }
+
+  select option {
+    width: 5vw;
+  }
+
+}

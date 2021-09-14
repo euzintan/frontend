@@ -1,0 +1,209 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100vw;
+  height: 90vh;
+  background-color: inherit;
+}
+
+.vbs {
+  font-family: "Raleway", sans-serif;
+}
+
+.scheduleAndCalendar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 70vw;
+  height: 65vh;
+  margin-top: 1%;
+}
+
+.blackout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+}
+
+.blackout p {
+  font-size: 30px;
+}
+
+.specificVenueLeftSide {
+  flex-direction: column;
+  width: 70%;
+  height: 70vh;
+}
+
+.bottomNavigation {
+  width: 70%;
+  height: 6vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1% 0;
+}
+
+.backButton {
+  border: 1px solid #c84b31;
+  color: #c84b31;
+  text-decoration: none;
+  font-family: "Roboto Condensed", sans-serif;
+  width: 20%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5vw;
+}
+
+.selectDNT {
+  font-family: "Roboto Condensed", sans-serif;
+  margin: 1% 0;
+}
+
+.backButton:hover {
+  background-color: #c84b31;
+  color: white;
+}
+
+.submitButton {
+  color: white;
+  text-decoration: none;
+  font-family: "Roboto Condensed", sans-serif;
+  width: 20%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5vw;
+}
+
+.buttonMobile {
+  width: 48%;
+}
+
+.enabled {
+  background-color: #c84b31;
+}
+
+.enabled:hover {
+  background-color: #993926;
+}
+
+.disabled {
+  background-color: #888888;
+}
+
+.IconTopNavigationMobile {
+  color: #ecdbba;
+  font-size: 33px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-width: 35px;
+}
+
+.specifcVenueCalendarContainerMobile {
+  flex-direction: column;
+  max-width: 95%;
+  width: 95%;
+  margin-top: 1%;
+}
+
+@media only screen and (max-width: 1200px) {
+  .scheduleAndCalendar,
+  .banner {
+    width: 95vw;
+  }
+
+  .bottomNavigation {
+    width: 95vw !important;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .venueName {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .banner {
+    background-color: white;
+    font-size: 25px;
+  }
+
+  .bottomNavigation {
+    width: 95%;
+    height: 10vh;
+  }
+
+  .backButton.modal {
+    width: 48%;
+    height: 35px;
+  }
+
+  .selectedDateDisplay {
+    height: 100%;
+    width: 100%;
+  }
+
+  .topNavigationMobile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 95%;
+    height: 10%;
+  }
+
+  .bottomNavigationModal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+  }
+
+  .submitButton,
+  .backButton {
+    width: 48%;
+    height: 8vh;
+    border-radius: 2vw;
+  }
+}
+
+.blink {
+  animation: blink 1s ease-in alternate;
+}
+
+@keyframes blink {
+  0% {
+    transform: translateY(0);
+  }
+
+  14% {
+    transform: translateY(-10%);
+  }
+  28% {
+    transform: translateY(0);
+  }
+  42% {
+    transform: translateY(-10%);
+  }
+  66% {
+    transform: translateY(0);
+  }
+  80% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

@@ -7,19 +7,25 @@ import {
 } from "react-router-dom";
 
 import Home from "./home/pages/Home";
-import Finance from "./finance/pages/Finance";
-import Vbs from "./vbs/pages/Vbs";
-import Cca from "./cca/pages/Cca";
+
+//Venue Booking System
+import VenueSelection from "./vbs/pages/VenueSelection/VenueSelection";
+import SpecificVenue from "./vbs/pages/SpecificVenue/SpecificVenue";
+import BookingPage from "./vbs/pages/BookingPage/BookingPage";
+import ConfirmationPage from "./vbs/pages/ConfirmationPage/ConfirmationPage";
 import Login from "./login/pages/Login";
-import Signup from "./signup/pages/Signup";
-import SpecificVenue from "./vbs/pages/SpecificVenue";
-import MainNavigation from "./shared/components/Navigation/MainNavigation";
-import BookingPage from "./vbs/pages/BookingPage";
-import ConfirmationPage from "./vbs/pages/ConfirmationPage";
+
+//VBS Admin
+import AdminMain from "./admin/pages/AdminMain";
+import AdminView from "./admin/pages/AdminView";
+
+import Navbar from "./shared/components/Navigation/NavBar";
+import Contacts from "./contacts/pages/Contacts";
 import { LoginContext } from "./shared/context/LoginContext";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  let routes;
 
   const login = useCallback(() => {
     setIsLoggedIn(true);
@@ -29,22 +35,15 @@ const App = () => {
     setIsLoggedIn(false);
   }, []);
 
-  let routes;
-
   if (isLoggedIn) {
     //routes when logged in
     routes = (
       <Switch>
-        <Route exact path="/" component={Home}/>
-        <Route path="/vbs" component={Vbs}/>
-        <Route path="/vbs/confirmation" component={ConfirmationPage}/>
-        <Route path="/vbs/:venueName" component={SpecificVenue}/>
-        <Route path="/vbs/:venueName/bookingpage" component={BookingPage}/>
-        <Route path="/finance" exact>
-          <Finance />
+        <Route path="/admin" exact>
+          <AdminMain />
         </Route>
-        <Route path="/cca" exact>
-          <Cca />
+        <Route path="/adminview" exact>
+          <AdminView />
         </Route>
         <Redirect to="/" />
       </Switch>
@@ -53,37 +52,50 @@ const App = () => {
     //routes when not logged in
     routes = (
       <Switch>
-        <Route exact path="/" >
+        <Route exact path="/">
           <Home />
         </Route>
-        <Route exact path="/vbs">
-          <Vbs />
-        </Route>
-        <Route exact path="/vbs/confirmation" component={ConfirmationPage}/>
-        <Route exact path="/vbs/:venueName" component={SpecificVenue}/>
-        <Route exact path="/vbs/:venueName/bookingpage" component={BookingPage}/>
-        <Route path="/login" exact>
+        <Route exact path="/vbs" component={VenueSelection}></Route>
+        <Route exact path="/vbs/confirmation" component={ConfirmationPage} />
+        <Route exact path="/vbs/:venueName" component={SpecificVenue} />
+        <Route
+          exact
+          path="/vbs/:venueName/bookingpage"
+          component={BookingPage}
+        />
+        <Router path="/Contacts" exact>
+          <Contacts />
+        </Router>
+        <Route path="/admin" exact>
           <Login />
         </Route>
-        <Route path="/signup" exact>
+        {/* <Route path="/signup" exact>
           <Signup />
-        </Route>
-        <Redirect to="/" /> 
+        </Route> */}
+        <Redirect to="/" />
       </Switch>
     );
   }
 
   return (
-    <LoginContext.Provider
-      value={{isLoggedIn: isLoggedIn, login: login, logout: logout }}
-    >
-      <Router>
-        <MainNavigation />
-        <main>
-          {routes}
-        </main>
-      </Router>
-    </LoginContext.Provider>
+    <>
+      <head>
+        <style>
+          @import
+          url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
+        </style>
+        <style>
+          @import
+          url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+        </style>
+      </head>
+      <LoginContext.Provider value={{ isLoggedIn, login, logout }}>
+        <Router>
+          <Navbar />
+          <main>{routes}</main>
+        </Router>
+      </LoginContext.Provider>
+    </>
   );
 };
 
